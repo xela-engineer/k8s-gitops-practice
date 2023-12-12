@@ -8,8 +8,5 @@ roleRef:
   name: system:openshift:scc:privileged
 subjects:
 - kind: ServiceAccount
-  name: minio-netobserv-sa
-  namespace: minio-netobserv
-- kind: ServiceAccount
   name: grafana-user
   namespace: netobserv
