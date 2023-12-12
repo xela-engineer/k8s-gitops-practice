@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2023-12-04T10:54:05Z"
+  name: system:openshift:scc:privileged
+  resourceVersion: "50709"
+  uid: 20a7a14a-7a30-40fa-abe4-38d2e1a639f3
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:privileged
+subjects:
+- kind: ServiceAccount
+  name: minio-netobserv-sa
+  namespace: minio-netobserv
+- kind: ServiceAccount
+  name: grafana-user
+  namespace: netobserv
