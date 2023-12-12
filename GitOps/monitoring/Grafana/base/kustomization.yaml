@@ -4,3 +4,4 @@ resources:
 - Service.yaml
 - ServiceAccount.yaml
 - pvc.yaml
+- Route.yaml
