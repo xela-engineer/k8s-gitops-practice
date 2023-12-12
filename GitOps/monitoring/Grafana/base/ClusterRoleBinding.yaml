@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: system:openshift:scc:privileged
+  name: sccprivileged-for-grafana
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
