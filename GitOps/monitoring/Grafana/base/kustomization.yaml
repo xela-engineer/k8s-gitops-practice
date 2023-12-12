@@ -1,0 +1,6 @@
+resources:
+- ClusterRoleBinding.yaml
+- Deployment.yaml
+- Service.yaml
+- ServiceAccount.yaml
+- pvc.yaml
