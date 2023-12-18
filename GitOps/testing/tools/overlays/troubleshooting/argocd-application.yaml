@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc 
   project: default 
   source: 
-    path: GitOps/GitOps/testing/tools/overlays/troubleshooting
+    path: GitOps/testing/tools/overlays/troubleshooting
     repoURL: https://github.com/xela-engineer/k8s-gitops-practice
     targetRevision: main
   syncPolicy: 
