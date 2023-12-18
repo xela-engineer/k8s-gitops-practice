@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testing-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc 
+  project: default 
+  source: 
+    path: GitOps/GitOps/testing/tools/overlays/troubleshooting
+    repoURL: https://github.com/xela-engineer/k8s-gitops-practice
+    targetRevision: main
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=false
