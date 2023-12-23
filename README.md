@@ -6,3 +6,9 @@ A managed collection of manifests is known as an Application within Argo CD. The
 ## Quick Start ##
 1. oc adm policy add-role-to-user admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller -n <Namespace_Name>
 2. Deploy argocd-application.yaml
+
+## References ##
+
+1. ArgoCD x tekton x Helm Chart
+    1. https://github.com/davidseve/cloud-native-deployment-strategies
+   
