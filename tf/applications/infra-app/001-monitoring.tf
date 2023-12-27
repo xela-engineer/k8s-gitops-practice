@@ -1,5 +1,5 @@
 # This is a tf mainly for monitoring tools
-
+# podman run -d -p 9090:9090 -v C:\Users\Alex\Documents\Container-services\Prometheus\prometheus.yml:/etc/prometheus/prometheus.yml -v prometheus-data:/prometheus  prom/prometheus
 resource "docker_image" "prometheus" {
   name         = "prom/prometheus:latest"
   keep_locally = false
