@@ -12,3 +12,5 @@ A managed collection of manifests is known as an Application within Argo CD. The
 1. ArgoCD x tekton x Helm Chart
     1. https://github.com/davidseve/cloud-native-deployment-strategies
    
+2. Terraform 
+    1. https://blog.ruanbekker.com/blog/2021/11/23/run-docker-containers-with-terraform/

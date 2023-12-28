@@ -8,7 +8,7 @@ resource "docker_network" "monitoring_network" {
 # =============== Resources for Prometheus ========================
 # podman run -d -p 9090:9090 -v C:\Users\Alex\Documents\Container-services\Prometheus\prometheus.yml:/etc/prometheus/prometheus.yml -v prometheus-data:/prometheus  prom/prometheus
 resource "docker_image" "prometheus" {
-  name         = "prom/prometheus:v2.48.1"
+  name         = "prom/prometheus:${var.prometheus_image_tag}"
   keep_locally = false
 }
 
@@ -48,7 +48,7 @@ resource "docker_container" "prometheus" {
 # =============== Resources for Grafana =========
 
 resource "docker_image" "grafana" {
-  name         = "grafana/grafana-oss:9.5.15"
+  name         = "grafana/grafana-oss:${var.grafana_image_tag}"
   keep_locally = false
 }
 
