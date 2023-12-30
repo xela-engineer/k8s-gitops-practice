@@ -23,3 +23,13 @@ variable "docker_ports" {
     }
   ]
 }
+
+variable "list_type" {
+ description = "This is a variable of type list"
+ type        = list(string)
+ default     = ["string1", "string2", "string3"]
+}
+
+variable "name" {
+
+}
