@@ -1,5 +1,10 @@
 # This is a tf mainly for monitoring tools
 # TODO: add variables
+locals {
+  service_name = "forum"
+  owner        = "Alex"
+  tag_of_group = "monitoring"
+}
 # ============= docker_network ==========
 resource "docker_network" "monitoring_network" {
   name = "monitoring_network"
@@ -22,6 +27,11 @@ resource "docker_container" "prometheus" {
   image = docker_image.prometheus.image_id
   name  = "lab-prometheus"
 
+  labels {
+    label = "tag"
+    value = local.tag_of_group
+  }
+
   networks_advanced {
     name    = docker_network.monitoring_network.name
     aliases = ["prometheus"]
@@ -34,7 +44,7 @@ resource "docker_container" "prometheus" {
   volumes {
     container_path  = "/etc/prometheus/prometheus.yml"
     read_only = false
-    host_path = "/c/Users/Alex/Documents/Container-services/Prometheus/prometheus.yml"
+    host_path = "/c/Users/Alex/Documents/GitHub/k8s-gitops-practice/tf/applications/infra-app/data/prometheus.yml"
    #volume_name = "${docker_volume.dashing_public.name}"
   }
 
@@ -67,6 +77,11 @@ resource "docker_container" "grafana" {
   working_dir = "/usr/share/grafana"
   cpu_shares = 0
 
+  labels {
+    label = "tag"
+    value = local.tag_of_group
+  }
+  
   networks_advanced {
     name    = docker_network.monitoring_network.name
     aliases = ["grafana"]
