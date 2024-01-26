@@ -1,4 +1,4 @@
-
+## Quick Start ##
 
 Enable debugging on Linux:
 ``` sh
@@ -10,5 +10,10 @@ Enable debugging for PowerShell:
 $env:TF_LOG="DEBUG"
 ```
 
-
+How to deploy?
+``` powershell
+cd .\tf\applications\infra-app\
+terraform plan
+terraform apply
+```
 
