@@ -16,11 +16,13 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
-  - job_name: vmnode
+  - job_name: VMs
+    scrape_interval: 5s
     static_configs:
-    - targets: ['192.168.241.130:9100']
+    - targets: ['jenkins.alexworkstation.com:9100']
 
   - job_name: jenkins
     metrics_path: '/prometheus'
+    scrape_interval: 5s
     static_configs:
-      - targets: ['alex.myjenkins.com:8080']
+      - targets: ['jenkins.alexworkstation.com:8080']
