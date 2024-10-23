@@ -26,7 +26,7 @@ resource "docker_volume" "prometheus-data" {
 resource "docker_container" "prometheus" {
   image = docker_image.prometheus.image_id
   name  = "lab-prometheus"
-
+  restart = "always"
   labels {
     label = "tag"
     value = local.tag_of_group
@@ -76,7 +76,7 @@ resource "docker_container" "grafana" {
   user = "472" 
   working_dir = "/usr/share/grafana"
   cpu_shares = 0
-
+  restart = "always"
   labels {
     label = "tag"
     value = local.tag_of_group
