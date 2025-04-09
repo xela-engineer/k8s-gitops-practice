@@ -26,3 +26,7 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['jenkins.alexworkstation.com:8080']
+  
+  - job_name: window-exporter
+    static_configs:
+    - targets: ['192.168.0.2:9182']
